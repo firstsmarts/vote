@@ -11,7 +11,7 @@
                 <span class="searchbtn" @click="getList"></span>
             </div>
         </div>
-        <div class="swiperbox">
+        <div class="swiperbox clearfix">
             <router-link :to="`/detail/${item.id}`" class="user-item" v-for="(item,i) in userlist" :key="i">
                 <div class="image-wraper">
                     <div class="imgbox" :style="{backgroundImage: `url(${item.img_url})`}"></div>
