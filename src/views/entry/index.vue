@@ -12,18 +12,12 @@
             </div>
         </div>
         <div class="swiperbox">
-            <div class="swiper-container" ref="container">
-                <div class="swiper-wrapper">
-                    <router-link :to="`/detail/${item.id}`" class="swiper-slide" v-for="(item,i) in userlist" :key="i">
-                        <div class="image-wraper">
-                            <div class="imgbox" :style="{backgroundImage: `url(${item.img_url})`}"></div>
-                        </div>
-                        <div class="name"><span v-text="item.number"></span>号 <span v-text="item.name"></span></div>
-                    </router-link>
+            <router-link :to="`/detail/${item.id}`" class="user-item" v-for="(item,i) in userlist" :key="i">
+                <div class="image-wraper">
+                    <div class="imgbox" :style="{backgroundImage: `url(${item.img_url})`}"></div>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
+                <div class="name"><span v-text="item.number"></span>号 <span v-text="item.name"></span></div>
+            </router-link>
         </div>
         <router-link to="/" class="backbtn">
             <img src="../../assets/back.png" alt="" class="back">
@@ -45,20 +39,12 @@ export default {
         this.getList()
     },
     mounted(){
-        this.swiper = new Swiper('.swiper-container', {
-                slidesPerView: 2,
-                spaceBetween: 30,
-                freeMode: true
-        });
     },
     methods:{
         getList(){
             axios.get(`/testvote/api.php/Index/xlist?name=${this.name}`).then(({data}) => {
                 console.log(data)
                 this.userlist = data
-                this.$nextTick(() => {
-                    this.swiper.updateSlides()
-                })
             })
         }
     }
@@ -155,5 +141,12 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.user-item{
+    float: left;
+    width: 48%;
+    padding-bottom: 4%;
+}
+.user-item:nth-child(2n){
+    margin-left: 4%;
+}
 </style>
