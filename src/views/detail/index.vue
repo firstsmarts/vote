@@ -3,7 +3,7 @@
         <div class="advbox">
             <img src="../../assets/adv.png" alt="" class="adv">
         </div>
-        <div class="infobox">
+        <div class="infobox clearfix">
             <div class="userinfo">
                 <p>姓名：<span v-text="name"></span></p>
                 <p>职位：<span v-text="position"></span></p>
@@ -107,29 +107,27 @@ export default {
     padding: 3.3% 0;
 }
 .infobox{
-    height: 60px;
+    min-height: 60px;
     background: url(../../assets/infobg.png) center center no-repeat;
     background-size: cover;
     box-sizing: border-box;
     padding: 10px 5% 10px 10%;
+    position: relative;
 }
 .userinfo{
     float: left;
-    width: 76%;
+    margin-right: 60px;
     text-align: left;
     line-height: 20px;
 }
 .userinfo p{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: #26236a;
     font-weight: 700;
     font-size: 14px;
     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 .backbtn{
-    float: right;
+    position: absolute;
     width: 54px;
     line-height: 26px;
     height: 26px;
@@ -137,7 +135,8 @@ export default {
     color: #fff;
     border-radius: 6px;
     font-size: 14px;
-    margin-top: 7px;
+    top: 17px;
+    right: 5%;
 }
 .subbox{
     padding: 10% 10% 0 10% ;

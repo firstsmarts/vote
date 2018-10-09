@@ -9,7 +9,7 @@
         <div class="swiperbox">
             <div class="swiper-container" ref="container">
                 <div class="swiper-wrapper">
-                    <div v-for="(item,i) in imglist" :key="i" class="swiper-slide" :style="{backgroundImage: `url(${item.img_url})`}"></div>
+                    <div v-for="(item,i) in imglist" :key="i" class="swiper-slide" :style="{backgroundImage: `url(${item.img_url})`,backgroundSize: i == 0 ? '80%' : ''}"></div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-button-prev"></div>
@@ -44,6 +44,10 @@ export default {
             this.$nextTick(() => {
                 this.swiper = new Swiper('.swiper-container', {
                 spaceBetween: 30,
+                autoplay: {
+                    delay: 2000
+                },
+                loop: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -120,7 +124,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
 }
-.swiper-slide:nth-child(1){
+.swiper-slide:last-child{
     background-image: url(../../assets/slide1.png);
     background-size: 80%;
 }
