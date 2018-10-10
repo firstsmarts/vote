@@ -8,7 +8,7 @@
                 <p>姓名：<span v-text="name"></span></p>
                 <p>职位：<span v-text="position"></span></p>
             </div>
-            <router-link to="/entry" class="backbtn">返回</router-link>
+            <a href="/testdist" class="backbtn">返回</a>
         </div>
         <div class="subbox">
             <div class="avatarbox clearfix">
@@ -92,6 +92,9 @@ export default {
             })
             localStorage.setItem('uuid',uuid)
             return uuid
+        },
+        back(){
+            history.go(-1)
         }
     }
 }

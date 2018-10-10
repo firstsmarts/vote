@@ -6,7 +6,7 @@
         <div class="datebox">
             <div class="date-item">
                 <div class="date-title begin"></div>
-                <p class="date">2018年10月09日00:00</p>
+                <p class="date">2018年10月10日10:00</p>
             </div>
             <div class="date-item">
                 <div class="date-title end"></div>

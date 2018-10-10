@@ -12,12 +12,12 @@
             </div>
         </div>
         <div class="swiperbox clearfix">
-            <router-link :to="`/detail/${item.id}`" class="user-item" v-for="(item,i) in userlist" :key="i">
+            <a :href="`/testdist/detail.html?id=${item.id}`" class="user-item" v-for="(item,i) in userlist" :key="i">
                 <div class="image-wraper">
                     <div class="imgbox" :style="{backgroundImage: `url(${item.img_url})`}"></div>
                 </div>
                 <div class="name"><span v-text="item.number"></span>号 <span v-text="item.name"></span></div>
-            </router-link>
+            </a>
         </div>
         <router-link to="/" class="backbtn">
             <img src="../../assets/back.png" alt="" class="back">
